@@ -3,6 +3,7 @@ package com.example.signuptest;
 import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -12,6 +13,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -23,6 +26,17 @@ import com.android.volley.toolbox.Volley;
 
 public class MainActivity extends AppCompatActivity {
 
+    FrameLayout rellay1;
+    RelativeLayout rellay2;
+
+    Handler handler = new Handler();
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            rellay1.setVisibility(View.VISIBLE);
+            rellay2.setVisibility(View.VISIBLE);
+        }
+    };
     Button btn;
     EditText First,Last,Email,Password;
 
@@ -34,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        rellay1 = (FrameLayout) findViewById(R.id.rellay1);
+        rellay2 = (RelativeLayout) findViewById(R.id.rellay2);
+        handler.postDelayed(runnable, 2000); // timeout for the splash screen
         if (android.os.Build.VERSION.SDK_INT > 9)
         {
             StrictMode.ThreadPolicy policy = new
@@ -47,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         Email = (EditText) findViewById(R.id.email);
         Password = (EditText) findViewById(R.id.pwd);
 
-        btn.setEnabled(false);
+       // btn.setEnabled(false);
 
         Password.addTextChangedListener(new TextWatcher() {
 
@@ -83,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
                         Password.getText().toString());
 
                 Intent myIntent = new Intent(MainActivity.this, RegisterActivity.class);
+                myIntent.putExtra("Email", Email.getText().toString());
                 MainActivity.this.startActivity(myIntent);
             }
         });

@@ -5,105 +5,158 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/grad_bg"
     tools:context=".MainActivity">
 
+
+
     <FrameLayout
+        android:id="@+id/rellay1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:animateLayoutChanges="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"
+        android:layout_marginBottom="10dp">
 
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_icon"/>
+
+        <RelativeLayout
+            android:id="@+id/rellay2"
+            android:layout_width="match_parent"
+            android:layout_height="520dp"
+            android:layout_marginTop="100dp"
+            android:visibility="gone">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Registration"
-            android:textStyle="bold"
+            android:layout_marginTop="10dp"
             android:textAlignment="center"
-            android:textSize="30sp"/>
-        
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
         <TextView
             android:layout_width="match_parent"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
-            android:textAlignment="textStart"
-            android:layout_marginTop="80dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="100dp"
             android:layout_marginRight="270dp"
             android:text="First Name:"
-            android:textSize="20sp"/>
+            android:textAlignment="textStart"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/fname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="130dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginRight="20dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="170dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="270dp"
-            android:text="Last Name:"
-            android:textSize="20sp"/>
-
-        <EditText
-            android:id="@+id/lname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="170dp"
-            android:layout_marginLeft="130dp"
-            android:layout_marginRight="20dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Email:"
-            android:layout_marginTop="260dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="300dp"
-            android:textSize="20sp"/>
-
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:layout_marginTop="260dp"
-            android:layout_marginLeft="130dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/et_bg"
+            android:textSize="16dp"
+            android:fontFamily="sans-serif-light"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:layout_marginRight="20dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Password:"
-            android:layout_marginTop="350dp"
+            android:textColor="@color/white"
             android:layout_marginLeft="10dp"
-            android:textSize="20sp"
-            android:layout_marginRight="280dp"/>
+            android:layout_marginTop="170dp"
+            android:layout_marginRight="270dp"
+            android:text="Last Name:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/lname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="170dp"
+            android:background="@drawable/et_bg"
+            android:textSize="16dp"
+            android:fontFamily="sans-serif-light"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_marginRight="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="260dp"
+            android:layout_marginRight="300dp"
+            android:text="Email:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:fontFamily="sans-serif-light"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="260dp"
+            android:background="@drawable/et_bg"
+            android:layout_marginRight="20dp"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="350dp"
+            android:layout_marginRight="280dp"
+            android:text="Password:"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/pwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="350dp"
             android:layout_marginLeft="130dp"
+            android:layout_marginTop="350dp"
+            android:background="@drawable/et_bg"
+            android:textSize="16dp"
+            android:fontFamily="sans-serif-light"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:layout_marginRight="20dp"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword" />
 
         <Button
             android:id="@+id/btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign UP"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btn_bg"
             android:layout_marginTop="450dp"
-            android:layout_marginLeft="145dp"/>
+            android:textColor="@color/white"
+            android:paddingLeft="50dp"
+            android:textSize="20dp"
+            android:paddingRight="50dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Sign UP" />
 
-
+        </RelativeLayout>
     </FrameLayout>
-
 
 </LinearLayout>
